@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Consultation – Demo Lead Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- GOOGLE TAG MANAGER (PASTE YOUR GTM CODE HERE LATER) -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background: #000;
+      color: #fff;
+    }
+
+    .secondary-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .book-btn {
+      background: #007bff;
+      color: #fff;
+      flex: 1;
+    }
+
+    .enquire-btn {
+      background: #28a745;
+      color: #fff;
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Get a Free Consultation</h1>
+    <p>Fill out the form and we’ll get back to you shortly.</p>
+
+    <!-- LEAD FORM -->
+    <form action="thank-you.html" method="GET" id="leadForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number">
+      <textarea name="message" placeholder="Tell us about your requirement"></textarea>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <!-- SECONDARY CONVERSION BUTTONS -->
+    <div class="secondary-buttons">
+      <button class="book-btn" id="bookNowBtn">Book Now</button>
+      <button class="enquire-btn" id="enquireNowBtn">Enquire Now</button>
+    </div>
+  </div>
+
+</body>
+</html>
 
