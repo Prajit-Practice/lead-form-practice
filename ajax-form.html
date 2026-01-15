@@ -70,6 +70,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2>Get a Free Consultation</h2>
     <form id="leadForm">
+      <input type="hidden" name="utm_source" id="utm_source">
+<input type="hidden" name="utm_medium" id="utm_medium">
+<input type="hidden" name="utm_campaign" id="utm_campaign">
+<input type="hidden" name="utm_term" id="utm_term">
+
       <div class="form-group">
         <input type="text" id="name" name="name" placeholder="Your Full Name" required />
       </div>
@@ -92,18 +97,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="statusMsg" class="status"></div>
   </div>
 
-  <script>
+<script>
+  function getUTMParams() {
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById("utm_source").value =
+      params.get("utm_source") || "direct";
+
+    document.getElementById("utm_medium").value =
+      params.get("utm_medium") || "none";
+
+    document.getElementById("utm_campaign").value =
+      params.get("utm_campaign") || "none";
+
+    document.getElementById("utm_term").value =
+      params.get("utm_term") || "none";
+  }
+
+  window.onload = getUTMParams;
+
   document.getElementById("leadForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Simulate successful submission
     document.getElementById("statusMsg").style.color = "green";
     document.getElementById("statusMsg").textContent =
       "Thank you! Your information has been sent successfully.";
 
-    document.getElementById("leadForm").reset();
+    this.reset();
   });
 </script>
+
 
 </body>
 </html>
